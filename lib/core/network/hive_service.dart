@@ -17,7 +17,7 @@ class HiveService {
     Hive.registerAdapter(CourseHivemodelAdapter());
   }
 
-  ///////////////////////////Batch Queries///////////////////////////////
+
 
   Future<void> addBatch(BatchHiveModel batch) async {
     var box = await Hive.openBox<BatchHiveModel>(HiveTableConstant.batchBox);
@@ -36,7 +36,7 @@ class HiveService {
   }
 
 
-  /////////////////////////////////Course Querie/////////////////
+ 
   
   Future<void> addCourse(CourseHivemodel course) async {
     var box = await Hive.openBox<CourseHivemodel>(HiveTableConstant.courseBox);
@@ -55,8 +55,6 @@ class HiveService {
     await box.delete(id);
   }
 
-  ///////////////////////////////////////// Student Queries////////////////
-   
   Future<void> addStudent(StudentHivemodel student) async{
     var box = await Hive.openBox<StudentHivemodel>(HiveTableConstant.studentBox);
     await box.put(student.studentId, student);
